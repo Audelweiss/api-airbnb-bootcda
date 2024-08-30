@@ -1,0 +1,45 @@
+{
+   "GET /api/homes": {
+      "content-type": "api::home.home",
+      "roles": {
+         "authenticated": {},
+         "public": {
+            "fields": [
+               "title",
+               "bed",
+               "description",
+               "createdAt",
+               "id"
+            ],
+            "populate": {
+               "cover": {
+                  "fields": [
+                     "alternativeText",
+                     "url"
+                  ]
+               },
+               "host": {
+                  "populate": {
+                     "picture": {
+                        "fields": [
+                           "alternativeText",
+                           "url"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "firstname",
+                     "lastname",
+                     "biography"
+                  ]
+               },
+               "region": {
+                  "fields": [
+                     "label"
+                  ]
+               }
+            }
+         }
+      }
+   }
+}

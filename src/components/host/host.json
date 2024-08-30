@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_host_hosts",
+  "info": {
+    "displayName": "Host",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "host_name": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "Note": {
+      "type": "integer"
+    }
+  }
+}
